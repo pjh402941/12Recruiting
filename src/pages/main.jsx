@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import data from "./data.json";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import "./main.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import data from './data.json';
+import './main.css';
 
 const Background = styled.div`
   position: relative;
@@ -34,7 +34,7 @@ const Title = styled.div`
   height: 48px;
   top: 53px;
   margin: auto;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
@@ -100,7 +100,7 @@ const BtnLetter = styled.div`
   position: relative;
   height: 26px;
   top: 5px;
-  font-family: "SUIT";
+  font-family: 'SUIT';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -115,7 +115,7 @@ const Footer = styled.div`
   height: 29px;
   top: 280px;
   margin: auto;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -153,8 +153,8 @@ const Container = styled.div`
 const Main = () => {
   const navigate = useNavigate();
 
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
 
   function handleInput(event) {
     setId(event.target.value);
@@ -170,7 +170,7 @@ const Main = () => {
     for (let i = 0; i < 46; i++) {
       if (id == data[i].name && pw == data[i].phone && data[i].pass == 1) {
         console.log(id, pw, i);
-        navigate("/pass", { state: data[i].name });
+        navigate('/pass', { state: data[i].name });
         break;
       } else if (
         id == data[i].name &&
@@ -178,12 +178,12 @@ const Main = () => {
         data[i].pass == 0
       ) {
         console.log(id, pw, i);
-        navigate("/fail");
+        navigate('/fail');
         break;
       } else if (i == 45) {
         console.log(id, pw, i);
         alert(
-          "등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!"
+          '등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!',
         );
         break;
       }
