@@ -6,7 +6,7 @@ import './main.css';
 
 const Background = styled.div`
   position: relative;
-  height: 669px;
+  height: 844px;
   background: #902443;
 `;
 
@@ -14,26 +14,23 @@ const Line1 = styled.div`
 position: absolute;
 width: 151.31px;
 height: 284px;
-flex-shrink: 0;
 top: -30px;
-
 `;
 const Line2 = styled.div`
 position: absolute;
 width: 261.56px;
 height: 355.01px;
-flex-shrink: 0;
 bottom: -5px;
 right: 40px;
 z-index: 0;
 `;
 const WhiteBox = styled.div`
-position: relative;
-  width: 80%;
-  height: 480px;
-  top: 80px;
+  position: relative;
+  width: 75%;
+  height: 498px;
+  top: 130px;
   background: #ffffff;
-  box-shadow: 0px 0px 4px 2px rgba(100, 100, 100, 0.25);
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.59);
   border-radius: 5px;
   margin: auto;
   z-index: 1;
@@ -44,31 +41,52 @@ const Logo = styled.div`
   width: 81px;
   height: 81px;
   margin: auto;
-  top: 20px;
+  top: 35px;
 `;
 
 const Title = styled.div`
   position: relative;
   height: 48px;
-  top: 40px;
+  top: 45px;
   margin: auto;
-  font-family: 'Pretendard';
+  font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
+  line-height: normal;
   font-size: 20px;
-  line-height: 24px;
   text-align: center;
   color: #5e162b;
 `;
-
-const Name = styled.div`
+const NameRec = styled.div`
   position: relative;
   width: 36px;
   height: 26px;
-  top: 80px;
-  left: 10px;
+  top: 90px;
 `;
-
+const PhoneRec = styled.div`
+  position: relative;
+  width: 36px;
+  height: 26px;
+  top: 120px;
+`;
+const Rec = styled.div`
+  position: relative;
+  width: 10px;
+  border: 3.5px solid #dc7190;
+  transform: rotate(90deg);
+`;
+const TextLabel = styled.div`
+  position: relative;
+  font-family: 'SUIT';
+  width: 74px;
+  height: 26px;
+  text-align: left;
+  left: 15px;
+  bottom: 11.5px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+`;
 const NameBox = styled.input`
   position: relative;
   width: 210px;
@@ -77,19 +95,9 @@ const NameBox = styled.input`
   background: #cd99a6;
   border: 0;
   outline: none;
-
-
   border-radius: 50px;
-background: #FFF;
-box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
-`;
-
-const Phone = styled.div`
-  position: relative;
-  width: 74px;
-  height: 26px;
-  top: 110px;
-  left: 8px;
+  background: #FFF;
+  box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
 const PhoneBox = styled.input`
@@ -100,11 +108,6 @@ const PhoneBox = styled.input`
   background: #cd99a6;
   border: 0;
   outline: none;
-
-  ::placeholder {
-    color: white;
-  }
-
   border-radius: 50px;
   background: #FFF;
   box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
@@ -138,32 +141,16 @@ const BtnLetter = styled.div`
 const Footer = styled.div`
   position: relative;
   height: 29px;
-  top: 220px;
+  top: 230px;
   margin: auto;
-  font-family: 'Pretendard';
+  font-family: 'SUIT';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 24px;
   line-height: 29px;
   text-align: center;
   color: #ffffff;
   z-index: 1;
-`;
-
-const Rec = styled.div`
-  position: relative;
-  width: 10px;
-  top: 89px;
-  border: 3.5px solid #dc7190;
-  transform: rotate(90deg);
-`;
-
-const Rec2 = styled.div`
-  position: relative;
-  width: 10px;
-  top: 124px;
-  border: 3.5px solid #dc7190;
-  transform: rotate(90deg);
 `;
 
 const Div = styled.div`
@@ -193,6 +180,10 @@ const Main = () => {
   }
 
   const discriminate = () => {
+    // 휴대폰번호 정규식 확인 추가
+    if (!/^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/.test(pw)) {
+      alert('올바른 전화번호 형식이 아닙니다. 다시 입력해주세요.'); 
+    }
     for (let i = 0; i < 46; i++) {
       if (id == data[i].name && pw == data[i].phone && data[i].pass == 1) {
         console.log(id, pw, i);
@@ -230,15 +221,19 @@ const Main = () => {
         </Logo>
         <Title>
           동덕여자대학교 멋쟁이사자처럼
-          <br /> 11기 아기사자 합격자 발표
+          <br /> 12기 아기사자 합격자 발표
         </Title>
         <Div>
           <Container>
-            <Rec />
-            <Name>성함</Name>
+            <NameRec>
+            <Rec/>
+            <TextLabel>성함</TextLabel>
+            </NameRec>
             <NameBox placeholder="김멋사" className="nameBox" onChange={handleInput}></NameBox>
-            <Rec2 />
-            <Phone>전화번호</Phone>
+            <PhoneRec>
+            <Rec/>
+            <TextLabel>전화번호</TextLabel>
+            </PhoneRec>
             <PhoneBox
               placeholder="010-0000-0000"
               className="phoneBox"

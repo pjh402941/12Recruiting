@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Background = styled.div`
+  position:relative;
   height: 844px;
-  background: #f5f5f5;
+  background: #767676;
 `;
 
 const WhiteBox = styled.div`
+  position: relative;
   width: 80%;
   height: 571px;
   top: 10%;
@@ -17,26 +19,30 @@ const WhiteBox = styled.div`
 `;
 
 const ContentBox = styled.div`
+  position: relative;
   margin: auto;
 `;
 
 const Logo = styled.div`
+  position: relative;
   margin: auto;
   height: 43px;
   width: 43px;
+  top:20px;
 `;
 
 const TextBox = styled.div`
-  padding-top: 5%;
+  padding-top: 20%;
   margin: auto;
   width: 260px;
   height: 362px;
-  font-family: 'Pretendard';
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 15.5px;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #000000;
+  line-height: normal;
 `;
 
 const fail = () => (
@@ -58,17 +64,16 @@ const fail = () => (
           <br />
           우선 동덕여대 멋쟁이사자처럼 11기
           <br />
-          아기자사 모집에 관심을 가지고 지원해
-          <br />
-          주신 점, 매우 감사드립니다.
+          아기자사 모집에 관심을 가지고  
+          <br />지원해 주신 점, 매우 감사드립니다.
           <br />
           <br />
           지원자님의 면접을 바탕으로 운영진들의
           <br />
           의견을 종합하여 평가하였으나,
           <br />
-          제한된 선발 인원으로 인해 긍정적인 회신
-          <br />을 드리지 못하게 되었습니다.
+          제한된 선발 인원으로 인해 긍정적인 회신을
+          <br /> 드리지 못하게 되었습니다.
           <br />
           <br />
           아쉽지만 지원자님께서 보여주신
