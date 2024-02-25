@@ -21,11 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
     "browserslist": {
-=======
-  "browserslist": {
->>>>>>> 9ee9a368ec33818bcae1f056433e64f3b9c9ef4e
     "production": [
       ">0.2%",
       "not dead",
@@ -38,10 +34,7 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
     
-=======
->>>>>>> 9ee9a368ec33818bcae1f056433e64f3b9c9ef4e
     "prettier": "3.2.5"
   }
 }
