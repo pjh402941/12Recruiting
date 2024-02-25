@@ -1,34 +1,33 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import data from "./data.json";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import "./main.css";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import data from './data.json';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import './main.css';
 
 const Background = styled.div`
   position: relative;
-  height: 669px;
+  height: 100vh;
   background: #902443;
 `;
 
 const Line1 = styled.div`
-position: absolute;
-width: 151.31px;
-height: 284px;
-flex-shrink: 0;
-top: -30px;
-
+  position: absolute;
+  width: 151.31px;
+  height: 284px;
+  flex-shrink: 0;
+  top: -30px;
 `;
 const Line2 = styled.div`
-position: absolute;
-width: 261.56px;
-height: 355.01px;
-flex-shrink: 0;
-bottom: -5px;
-right: 40px;
-z-index: 0;
+  position: absolute;
+  width: 261.56px;
+  height: 355.01px;
+  flex-shrink: 0;
+  bottom: -5px;
+  right: 40px;
+  z-index: 0;
 `;
 const WhiteBox = styled.div`
-position: relative;
+  position: relative;
   width: 80%;
   height: 480px;
   top: 80px;
@@ -52,7 +51,7 @@ const Title = styled.div`
   height: 48px;
   top: 40px;
   margin: auto;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
@@ -78,10 +77,9 @@ const NameBox = styled.input`
   border: 0;
   outline: none;
 
-
   border-radius: 50px;
-background: #FFF;
-box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
 const Phone = styled.div`
@@ -106,7 +104,7 @@ const PhoneBox = styled.input`
   }
 
   border-radius: 50px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
@@ -125,7 +123,7 @@ const BtnLetter = styled.div`
   position: relative;
   height: 26px;
   top: 5px;
-  font-family: "SUIT";
+  font-family: 'SUIT';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -140,7 +138,7 @@ const Footer = styled.div`
   height: 29px;
   top: 220px;
   margin: auto;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -179,8 +177,8 @@ const Container = styled.div`
 const Main = () => {
   const navigate = useNavigate();
 
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
 
   function handleInput(event) {
     setId(event.target.value);
@@ -194,22 +192,28 @@ const Main = () => {
 
   const discriminate = () => {
     for (let i = 0; i < 46; i++) {
-      if (id == data[i].name && pw == data[i].phone && data[i].pass == 1) {
+      if (
+        data[i] &&
+        id == data[i].name &&
+        pw == data[i].phone &&
+        data[i].pass == 1
+      ) {
         console.log(id, pw, i);
-        navigate("/pass", { state: data[i].name });
+        navigate('/pass', { state: data[i].name });
         break;
       } else if (
+        data[i] &&
         id == data[i].name &&
         pw == data[i].phone &&
         data[i].pass == 0
       ) {
         console.log(id, pw, i);
-        navigate("/fail");
+        navigate('/fail');
         break;
       } else if (i == 45) {
         console.log(id, pw, i);
         alert(
-          "등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!"
+          '등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!',
         );
         break;
       }
@@ -219,7 +223,7 @@ const Main = () => {
   return (
     <Background>
       <Line1>
-        <img src={`${process.env.PUBLIC_URL}/images/main_leftup.png`}/>
+        <img src={`${process.env.PUBLIC_URL}/images/main_leftup.png`} />
       </Line1>
       <WhiteBox>
         <Logo>
@@ -236,7 +240,11 @@ const Main = () => {
           <Container>
             <Rec />
             <Name>성함</Name>
-            <NameBox placeholder="김멋사" className="nameBox" onChange={handleInput}></NameBox>
+            <NameBox
+              placeholder="김멋사"
+              className="nameBox"
+              onChange={handleInput}
+            ></NameBox>
             <Rec2 />
             <Phone>전화번호</Phone>
             <PhoneBox
@@ -249,10 +257,10 @@ const Main = () => {
             <BtnLetter>입력</BtnLetter>
           </Button>
         </Div>
-        <Footer>LIKELION UNIV  . DWU</Footer>
+        <Footer>LIKELION UNIV . DWU</Footer>
       </WhiteBox>
       <Line2>
-        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`}/>
+        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
       </Line2>
     </Background>
   );
