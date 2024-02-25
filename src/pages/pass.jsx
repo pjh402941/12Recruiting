@@ -4,20 +4,19 @@ import { useLocation } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 
 const Container = styled.div`
-  background: #fae4ea;
+  background: #902443;
   margin: 0 auto;
-  height: 1000px;
+  height: 844px;
 `;
 
 const WhiteDiv = styled.div`
   position: relative;
   width: 327px;
-  height: 700px;
-  top: 30px;
+  height: 676px;
+  top: 55px;
   margin: 0 auto;
-
   background: #ffffff;
-  box-shadow: 0px 0px 4px rgba(100, 100, 100, 0.25);
+  filter: drop-shadow(0px 0px 10px #FFF);
   border-radius: 5px;
 `;
 
@@ -31,11 +30,14 @@ const LogoImg = styled.img`
 
 const PassText = styled.p`
   padding-top: 110px;
-  font-family: 'Pretendard';
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 42px;
   text-align: center;
+  color: #5E162B;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
 `;
 
 const PassNameDiv = styled.div`
@@ -70,19 +72,21 @@ const PassNameSub = styled.div`
 `;
 
 const TextDiv = styled.p`
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 25px;
+  color: #000;
   text-align: center;
+  font-family: SUIT;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  font-style: normal;
   letter-spacing: 0.01em;
 `;
 
 const LetterImg = styled.img`
   height: 252.41px;
-  margin-top: -30px;
-  margin-left: -30px;
+  margin-top: -18px;
+  margin-left: -36px;
 `;
 
 const Pass = () => {
@@ -139,9 +143,9 @@ const Pass = () => {
           </a>
           <br />
           <br />
-          3월 17일까지 디스코드에 들어와주세요 🦁
+          3월 15일까지 디스코드에 들어와주세요!
           <br />
-          <br /> 3/26(일) 동덕 멋사 OT에서 만나요~ <br />
+          <br /> 3/17(일) 동덕 멋사 OT에서 만나요~ <br />
           *장소 추후 안내 예정
         </TextDiv>
         <LetterImg src="../images/envelope.png" />

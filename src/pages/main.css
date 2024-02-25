@@ -1,9 +1,12 @@
 ::placeholder {
-    color: black;
-    text-align: center;
+    color: #BBB;
+    text-align: left;
   }
   
   input {
-    text-align: center;
+    text-align: left;
+    padding-inline-start:10px;
+    padding-inline-end: 10px;
+    box-sizing: border-box;
   }
   
