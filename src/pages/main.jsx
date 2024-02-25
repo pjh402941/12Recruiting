@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import data from './data.json';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import './main.css';
 
 const Background = styled.div`
   position: relative;
-  height: 844px;
+  height: 100vh;
   background: #902443;
 `;
 
@@ -109,7 +109,7 @@ const PhoneBox = styled.input`
   border: 0;
   outline: none;
   border-radius: 50px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
@@ -128,6 +128,7 @@ const BtnLetter = styled.div`
   position: relative;
   height: 26px;
   top: 5px;
+  font-family: 'SUIT';
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 700;
@@ -185,11 +186,17 @@ const Main = () => {
       alert('올바른 전화번호 형식이 아닙니다. 다시 입력해주세요.'); 
     }
     for (let i = 0; i < 46; i++) {
-      if (id == data[i].name && pw == data[i].phone && data[i].pass == 1) {
+      if (
+        data[i] &&
+        id == data[i].name &&
+        pw == data[i].phone &&
+        data[i].pass == 1
+      ) {
         console.log(id, pw, i);
         navigate('/pass', { state: data[i].name });
         break;
       } else if (
+        data[i] &&
         id == data[i].name &&
         pw == data[i].phone &&
         data[i].pass == 0
@@ -210,7 +217,7 @@ const Main = () => {
   return (
     <Background>
       <Line1>
-        <img src={`${process.env.PUBLIC_URL}/images/main_leftup.png`}/>
+        <img src={`${process.env.PUBLIC_URL}/images/main_leftup.png`} />
       </Line1>
       <WhiteBox>
         <Logo>
@@ -244,10 +251,10 @@ const Main = () => {
             <BtnLetter>입력</BtnLetter>
           </Button>
         </Div>
-        <Footer>LIKELION UNIV  . DWU</Footer>
+        <Footer>LIKELION UNIV . DWU</Footer>
       </WhiteBox>
       <Line2>
-        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`}/>
+        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
       </Line2>
     </Background>
   );

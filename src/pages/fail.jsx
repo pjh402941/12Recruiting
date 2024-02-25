@@ -39,7 +39,7 @@ const TextBox = styled.div`
   color: #000;
   text-align: center;
   font-family: SUIT;
-  font-size: 15.5px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
