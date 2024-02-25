@@ -6,19 +6,37 @@ import "./main.css";
 
 const Background = styled.div`
   position: relative;
-  height: 844px;
+  height: 669px;
   background: #902443;
 `;
 
+const Line1 = styled.div`
+position: absolute;
+width: 151.31px;
+height: 284px;
+flex-shrink: 0;
+top: -30px;
+
+`;
+const Line2 = styled.div`
+position: absolute;
+width: 261.56px;
+height: 355.01px;
+flex-shrink: 0;
+bottom: -5px;
+right: 40px;
+z-index: 0;
+`;
 const WhiteBox = styled.div`
-  position: relative;
+position: relative;
   width: 80%;
-  height: 560px;
-  top: 30px;
+  height: 480px;
+  top: 80px;
   background: #ffffff;
   box-shadow: 0px 0px 4px 2px rgba(100, 100, 100, 0.25);
   border-radius: 5px;
   margin: auto;
+  z-index: 1;
 `;
 
 const Logo = styled.div`
@@ -26,13 +44,13 @@ const Logo = styled.div`
   width: 81px;
   height: 81px;
   margin: auto;
-  top: 43px;
+  top: 20px;
 `;
 
 const Title = styled.div`
   position: relative;
   height: 48px;
-  top: 53px;
+  top: 40px;
   margin: auto;
   font-family: "Pretendard";
   font-style: normal;
@@ -47,7 +65,7 @@ const Name = styled.div`
   position: relative;
   width: 36px;
   height: 26px;
-  top: 109px;
+  top: 80px;
   left: 10px;
 `;
 
@@ -55,18 +73,22 @@ const NameBox = styled.input`
   position: relative;
   width: 210px;
   height: 35px;
-  top: 117px;
+  top: 85px;
   background: #cd99a6;
-  border-radius: 50px;
   border: 0;
   outline: none;
+
+
+  border-radius: 50px;
+background: #FFF;
+box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
 const Phone = styled.div`
   position: relative;
   width: 74px;
   height: 26px;
-  top: 155px;
+  top: 110px;
   left: 8px;
 `;
 
@@ -74,22 +96,25 @@ const PhoneBox = styled.input`
   position: relative;
   width: 210px;
   height: 35px;
-  top: 161px;
+  top: 115px;
   background: #cd99a6;
-  border-radius: 50px;
   border: 0;
   outline: none;
 
   ::placeholder {
     color: white;
   }
+
+  border-radius: 50px;
+  background: #FFF;
+  box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
 const Button = styled.div`
   position: relative;
   width: 93px;
   height: 36px;
-  top: 195px;
+  top: 145px;
   background: #902443;
   border-radius: 10px;
   cursor: pointer;
@@ -113,7 +138,7 @@ const BtnLetter = styled.div`
 const Footer = styled.div`
   position: relative;
   height: 29px;
-  top: 280px;
+  top: 220px;
   margin: auto;
   font-family: "Pretendard";
   font-style: normal;
@@ -122,12 +147,13 @@ const Footer = styled.div`
   line-height: 29px;
   text-align: center;
   color: #ffffff;
+  z-index: 1;
 `;
 
 const Rec = styled.div`
   position: relative;
   width: 10px;
-  top: 121px;
+  top: 89px;
   border: 3.5px solid #dc7190;
   transform: rotate(90deg);
 `;
@@ -135,7 +161,7 @@ const Rec = styled.div`
 const Rec2 = styled.div`
   position: relative;
   width: 10px;
-  top: 167px;
+  top: 124px;
   border: 3.5px solid #dc7190;
   transform: rotate(90deg);
 `;
@@ -192,6 +218,9 @@ const Main = () => {
 
   return (
     <Background>
+      <Line1>
+        <img src={`${process.env.PUBLIC_URL}/images/main_leftup.png`}/>
+      </Line1>
       <WhiteBox>
         <Logo>
           <img
@@ -207,11 +236,11 @@ const Main = () => {
           <Container>
             <Rec />
             <Name>성함</Name>
-            <NameBox className="nameBox" onChange={handleInput}></NameBox>
+            <NameBox placeholder="김멋사" className="nameBox" onChange={handleInput}></NameBox>
             <Rec2 />
             <Phone>전화번호</Phone>
             <PhoneBox
-              placeholder="010-xxxx-xxxx"
+              placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
             ></PhoneBox>
@@ -220,8 +249,11 @@ const Main = () => {
             <BtnLetter>입력</BtnLetter>
           </Button>
         </Div>
-        <Footer>DONGDUK X LIKELION</Footer>
+        <Footer>LIKELION UNIV  . DWU</Footer>
       </WhiteBox>
+      <Line2>
+        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`}/>
+      </Line2>
     </Background>
   );
 };
