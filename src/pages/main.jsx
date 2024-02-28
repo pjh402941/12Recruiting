@@ -156,7 +156,7 @@ const BackgroundFooter = styled.div`
 position: fixed;
 bottom: 0;
 background: #902443;
-width:80.8%;
+width:1280px;
 height: 10px;
 z-index : -1;
 `;
@@ -273,7 +273,7 @@ const Main = () => {
       <Line2>
         <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
       </Line2>
-
+<BackgroundFooter></BackgroundFooter>
     </Background>
   );
 };
