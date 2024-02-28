@@ -9,6 +9,3 @@ input {
   padding-inline-end: 10px;
   box-sizing: border-box;
 }
-body {
-  overflow: hidden; /* 페이지 전체의 스크롤바를 숨김 */
-}
