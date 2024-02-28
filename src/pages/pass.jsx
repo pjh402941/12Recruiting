@@ -160,7 +160,7 @@ const Pass = () => {
               <PassNameSub>님</PassNameSub>은
             </PassNameDiv>
             <TextDiv>
-              동덕여대 멋사 11기에 최종합격 하셨습니다 🎉
+              동덕여대 멋사 12기에 최종합격 하셨습니다 🎉
               <br />긴 선발 과정에 참여하시느라 고생 많으셨습니다.
               <br /> 자세한 사항은 discord를 통해 안내드리겠습니다.
               <br />
