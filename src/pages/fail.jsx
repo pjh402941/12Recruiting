@@ -32,10 +32,10 @@ const Logo = styled.div`
 `;
 
 const TextBox = styled.div`
-  padding-top: 20%;
+  padding-top: 60px;
   margin: auto;
   width: 260px;
-  height: 362px;
+  height: 60vh;
   color: #000;
   text-align: center;
   font-family: SUIT;
