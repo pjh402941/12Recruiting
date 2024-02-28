@@ -15,7 +15,7 @@ const WhiteBox = styled.div`
   top: 10vh;
   margin: 0 auto;
   background: #ffffff;
-  filter: drop-shadow(0px 0px 10px #FFF);
+  filter: drop-shadow(0px 0px 10px #fff);
   border-radius: 5px;
 `;
 
@@ -30,7 +30,7 @@ const LogoImg = styled.img`
 const PassText = styled.p`
   padding-top: 110px;
   text-align: center;
-  color: #5E162B;
+  color: #5e162b;
   text-align: center;
   font-family: SUIT;
   font-size: 36px;
