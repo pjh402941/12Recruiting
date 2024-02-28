@@ -12,7 +12,7 @@ const WhiteBox = styled.div`
   position: relative;
   width: 320px;
   height: 600px;
-  top: 10vh;
+  top: 12vh;
   margin: 0 auto;
   background: #ffffff;
   filter: drop-shadow(0px 0px 10px #fff);
@@ -93,8 +93,9 @@ const LetterImg = styled.img`
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 90vh;
+  bottom: -25%;
 `;
+
 const Back = styled.div`
   position: absolute;
   top: 15px;
