@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Background = styled.div`
-  position:relative;
-  height: 844px;
+  position: relative;
+  height: 100vh;
   background: #767676;
 `;
 
@@ -28,7 +28,7 @@ const Logo = styled.div`
   margin: auto;
   height: 43px;
   width: 43px;
-  top:20px;
+  top: 20px;
 `;
 
 const TextBox = styled.div`
@@ -62,10 +62,11 @@ const fail = () => (
           운영진입니다.
           <br />
           <br />
-          우선 동덕여대 멋쟁이사자처럼 11기
+          우선 동덕여대 멋쟁이사자처럼 12기
           <br />
-          아기자사 모집에 관심을 가지고  
-          <br />지원해 주신 점, 매우 감사드립니다.
+          아기자사 모집에 관심을 가지고
+          <br />
+          지원해 주신 점, 매우 감사드립니다.
           <br />
           <br />
           지원자님의 면접을 바탕으로 운영진들의
