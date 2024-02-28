@@ -116,20 +116,19 @@ const Pass = () => {
 
   const confetti = () => {
     jsConfetti.addConfetti({
-      // confettiColors: [
-      //   '#ff0a54',
-      //   '#fde047',
-      //   '#a3e635',
-      //   '#38bdf8',
-      //   '#c4b5fd',
-      //   '#f9bec7',
-      // ],
-      // confettiRadius: 4,
-      // confettiNumber: 400,
-
-      emojis: ['✨'],
-      emojiSize: 65,
-      confettiNumber: 55,
+      confettiColors: [
+        // '#ff0a54',
+        // '#fde047',
+        // '#a3e635',
+        // '#38bdf8',
+        // '#c4b5fd',
+        // '#f9bec7',
+        '#DF013A',
+        '#FFFF00',
+        '#FFFFFF',
+      ],
+      confettiRadius: 4,
+      confettiNumber: 400,
     });
   };
 
