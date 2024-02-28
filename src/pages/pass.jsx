@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 
 const Background = styled.div`   
@@ -95,8 +95,18 @@ left: 50%;
 transform: translate(-50%, -50%);
 top: 90vh;
 `;
+const Back = styled.div`
+  position: absolute;
+  top: 15px;
+  cursor: pointer;
+`;
 
 const Pass = () => {
+  const navigate = useNavigate();
+  const gotoHome = () => {
+    navigate(-1);
+  };
+
   const location = useLocation();
   const name = location.state;
   console.log(name);
@@ -122,12 +132,18 @@ const Pass = () => {
   var timer = setInterval(confetti, 3000);
   setTimeout(stopConfetti, 9000);
 
+  window.addEventListener('popstate', stopConfetti);
+  window.addEventListener('beforeunload', stopConfetti);
+
   function stopConfetti() {
     clearInterval(timer);
   }
 
   return (
     <Background>
+      <Back onClick={gotoHome}>
+        <img src={`${process.env.PUBLIC_URL}/images/left.svg`} width="50px" />
+      </Back>
       <WhiteBox>
         <Logo src="../images/ddwu_logo.png" />
         <Container>
