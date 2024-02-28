@@ -11,18 +11,18 @@ const Background = styled.div`
 `;
 
 const Line1 = styled.div`
-position: absolute;
-width: 151.31px;
-height: 284px;
-top: -30px;
+  position: absolute;
+  width: 151.31px;
+  height: 284px;
+  top: -30px;
 `;
 const Line2 = styled.div`
-position: absolute;
-width: 261.56px;
-height: 355.01px;
-bottom: -5px;
-right: 40px;
-z-index: 0;
+  position: absolute;
+  width: 261.56px;
+  height: 355.01px;
+  bottom: -5px;
+  right: 40px;
+  z-index: 0;
 `;
 const WhiteBox = styled.div`
   position: relative;
@@ -96,7 +96,7 @@ const NameBox = styled.input`
   border: 0;
   outline: none;
   border-radius: 50px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 0px 5.8px 1px rgba(0, 0, 0, 0.25);
 `;
 
@@ -183,7 +183,7 @@ const Main = () => {
   const discriminate = () => {
     // 휴대폰번호 정규식 확인 추가
     if (!/^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/.test(pw)) {
-      alert('올바른 전화번호 형식이 아닙니다. 다시 입력해주세요.'); 
+      alert('올바른 전화번호 형식이 아닙니다. 다시 입력해주세요.');
     }
     for (let i = 0; i < 46; i++) {
       if (
@@ -233,13 +233,17 @@ const Main = () => {
         <Div>
           <Container>
             <NameRec>
-            <Rec/>
-            <TextLabel>성함</TextLabel>
+              <Rec />
+              <TextLabel>성함</TextLabel>
             </NameRec>
-            <NameBox placeholder="김멋사" className="nameBox" onChange={handleInput}></NameBox>
+            <NameBox
+              placeholder="김멋사"
+              className="nameBox"
+              onChange={handleInput}
+            ></NameBox>
             <PhoneRec>
-            <Rec/>
-            <TextLabel>전화번호</TextLabel>
+              <Rec />
+              <TextLabel>전화번호</TextLabel>
             </PhoneRec>
             <PhoneBox
               placeholder="010-0000-0000"
