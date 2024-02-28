@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from './data.json';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './main.css';
 
 const Background = styled.div`
@@ -67,7 +67,7 @@ const PhoneRec = styled.div`
   position: relative;
   width: 36px;
   height: 26px;
-  top: 120px;
+  top: 70px;
 `;
 const Rec = styled.div`
   position: relative;
