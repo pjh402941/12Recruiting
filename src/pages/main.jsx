@@ -214,6 +214,12 @@ const Main = () => {
     }
   };
 
+  const handleOnKeyPress = e => {
+    if (e.key == 'Enter') {
+      discriminate();
+    }
+  };
+
   return (
     <Background>
       <Line1>
@@ -249,6 +255,7 @@ const Main = () => {
               placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
+              onKeyPress={handleOnKeyPress} // Enter 입력 이벤트 함수
             ></PhoneBox>
           </Container>
           <Button onClick={discriminate}>

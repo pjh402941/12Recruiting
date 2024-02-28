@@ -93,8 +93,9 @@ width: 380px;
 position: absolute;
 left: 50%;
 transform: translate(-50%, -50%);
-top: 90vh;
+bottom: 0%;
 `;
+
 const Back = styled.div`
   position: absolute;
   top: 15px;
