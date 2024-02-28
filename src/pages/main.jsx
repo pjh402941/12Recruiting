@@ -142,7 +142,7 @@ const BtnLetter = styled.div`
 const Footer = styled.div`
   position: absolute;
   width: 100%;
-  bottom: -11vh;
+  bottom: -15vh;
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
