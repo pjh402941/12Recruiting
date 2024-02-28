@@ -28,7 +28,7 @@ const WhiteBox = styled.div`
   position: relative;
   width: 75%;
   height: 498px;
-  top: 130px;
+  top: 70px;
   background: #ffffff;z
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.59);
   border-radius: 5px;
@@ -142,7 +142,7 @@ const BtnLetter = styled.div`
 const Footer = styled.div`
   position: absolute;
   width: 100%;
-  bottom: -15vh;
+  bottom: -13vh;
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
