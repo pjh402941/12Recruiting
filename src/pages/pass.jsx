@@ -3,59 +3,67 @@ import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 
-const Background = styled.div`
-  background: #902443;
-  height: 100vh;
+const Background = styled.div`   
+background: #902443;
+height: 100vh;
 `;
 
 const WhiteBox = styled.div`
-  position: relative;
-  width: 75%;
-  height: 498px;
-  top: 10vh;
-  margin: 0 auto;
-  background: #ffffff;
-  filter: drop-shadow(0px 0px 10px #fff);
-  border-radius: 5px;
+position: relative;
+width: 320px;
+height: 600px;
+top: 10vh;
+margin: 0 auto;
+background: #ffffff;
+filter: drop-shadow(0px 0px 10px #FFF);
+border-radius: 5px;
 `;
 
-const LogoImg = styled.img`
-  position: absolute;
-  width: 58px;
-  height: 58px;
-  left: 134px;
-  top: 40px;
+const Logo = styled.img`
+position: absolute;
+width: 58px;
+height: 58px;
+left: 50%;
+top: 10vh;
+transform: translate(-50%, -50%);
+`;
+
+const Container = styled.div`
+position: relative;
+padding-top: 17vh;
+margin: 0 auto;
 `;
 
 const PassText = styled.p`
-  padding-top: 110px;
-  text-align: center;
-  color: #5e162b;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
+color: #5E162B;
+text-align: center;
+font-family: SUIT;
+font-size: 36px;
+font-weight: 800;
+line-height: 2.5rem;  
+`;
+
+const TextWrapper = styled.div`
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const PassNameDiv = styled.div`
-  padding-top: 35px;
-  padding-bottom: 15px;
-  margin-left: 113px;
-  text-align: center;
-  font-family: 'Pretendard';
-  display: flex;
-
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 29px;
-
-  color: #000000;
+width: 120px;
+display: flex;
+font-family: 'Pretendard';
+font-weight: 500;
+font-size: 20px;
+line-height: 29px;
+color: #000000;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: center;
 `;
 
 const PassName = styled.div`
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
@@ -63,29 +71,29 @@ const PassName = styled.div`
 `;
 
 const PassNameSub = styled.div`
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
   color: #000000;
 `;
 
-const TextDiv = styled.p`
-  color: #000;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 0.16px;
-  font-style: normal;
-  letter-spacing: 0.01em;
+const TextDiv = styled.div`
+color: #000;
+    font-family: SUIT;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-align: center;
+    padding-top: 0.8rem;
+    line-height: 1.4rem;
 `;
 
 const LetterImg = styled.img`
-  height: 252.41px;
-  margin-top: -18px;
-  margin-left: -36px;
+width: 380px;
+position: absolute;
+left: 50%;
+transform: translate(-50%, -50%);
+top: 90vh;
 `;
 const Back = styled.div`
   position: absolute;
@@ -141,12 +149,14 @@ const Pass = () => {
         <img src={`${process.env.PUBLIC_URL}/images/left.svg`} width="50px" />
       </Back>
       <WhiteBox>
-        <LogoImg src="../images/ddwu_logo.png" />
+        <Logo src="../images/ddwu_logo.png" />
+        <Container>
         <PassText>
           합격을
           <br />
           축하합니다!
         </PassText>
+        <TextWrapper>
         <PassNameDiv>
           <PassName>{name}</PassName>
           <PassNameSub>님</PassNameSub>은
@@ -167,8 +177,10 @@ const Pass = () => {
           <br /> 3/17(일) 동덕 멋사 OT에서 만나요~ <br />
           *장소 추후 안내 예정
         </TextDiv>
+        </TextWrapper>
+        </Container>
+        </WhiteBox>
         <LetterImg src="../images/envelope.png" />
-      </WhiteBox>
     </Background>
   );
 };
