@@ -153,12 +153,12 @@ const Footer = styled.div`
   transform: translate(-50%, -50%);
 `;
 const BackgroundFooter = styled.div`
-position: fixed;
-bottom: 0;
-background: #902443;
-width:1280px;
-height: 10px;
-z-index : -1;
+  position: fixed;
+  bottom: 0;
+  background: #902443;
+  width: 1280px;
+  height: 10px;
+  z-index: -1;
 `;
 const Div = styled.div`
   text-align: center;
@@ -172,7 +172,6 @@ const Container = styled.div`
 
 const Main = () => {
   const navigate = useNavigate();
-
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
@@ -225,7 +224,7 @@ const Main = () => {
       discriminate();
     }
   };
-  
+
   return (
     <Background>
       <Line1>
@@ -273,7 +272,7 @@ const Main = () => {
       <Line2>
         <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
       </Line2>
-<BackgroundFooter></BackgroundFooter>
+      <BackgroundFooter></BackgroundFooter>
     </Background>
   );
 };
