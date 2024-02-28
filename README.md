@@ -8,6 +8,9 @@
     ```
 
 2. 서버를 실행합니다.
+   ```bash
+    npm install
+    ```
     ```bash
     npm start
     ```
