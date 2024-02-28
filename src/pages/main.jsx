@@ -263,9 +263,7 @@ const Main = () => {
         </Div>
         <Footer>LIKELION UNIV . DWU</Footer>
       </WhiteBox>
-      <Line2>
-        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
-      </Line2>
+
     </Background>
   );
 };

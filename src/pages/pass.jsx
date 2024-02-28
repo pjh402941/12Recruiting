@@ -113,7 +113,8 @@ const Pass = () => {
   confetti();
   var timer = setInterval(confetti, 3000);
   setTimeout(stopConfetti, 9000);
-
+  window.addEventListener('popstate', stopConfetti);
+  window.addEventListener('beforeunload', stopConfetti);
   function stopConfetti() {
     clearInterval(timer);
   }
