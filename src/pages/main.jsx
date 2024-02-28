@@ -140,18 +140,17 @@ const BtnLetter = styled.div`
 `;
 
 const Footer = styled.div`
-  position: relative;
-  height: 29px;
-  top: 230px;
-  margin: auto;
+  position: absolute;
+  width: 100%;
+  bottom: -11vh;
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
-  line-height: 29px;
   text-align: center;
   color: #ffffff;
-  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Div = styled.div`
@@ -214,6 +213,11 @@ const Main = () => {
     }
   };
 
+  const handleOnKeyPress = e => {
+    if (e.key == 'Enter') {
+      discriminate();
+    }
+  };
   return (
     <Background>
       <Line1>
@@ -249,6 +253,7 @@ const Main = () => {
               placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
+              onKeyPress={handleOnKeyPress} // Enter 입력 이벤트 함수
             ></PhoneBox>
           </Container>
           <Button onClick={discriminate}>
