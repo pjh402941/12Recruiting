@@ -3,17 +3,16 @@ import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 
-const Container = styled.div`
+const Background = styled.div`
   background: #902443;
-  margin: 0 auto;
-  height: 844px;
+  height: 100vh;
 `;
 
-const WhiteDiv = styled.div`
+const WhiteBox = styled.div`
   position: relative;
-  width: 327px;
-  height: 676px;
-  top: 55px;
+  width: 75%;
+  height: 498px;
+  top: 10vh;
   margin: 0 auto;
   background: #ffffff;
   filter: drop-shadow(0px 0px 10px #FFF);
@@ -120,8 +119,8 @@ const Pass = () => {
   }
 
   return (
-    <Container>
-      <WhiteDiv>
+    <Background>
+      <WhiteBox>
         <LogoImg src="../images/ddwu_logo.png" />
         <PassText>
           합격을
@@ -149,8 +148,8 @@ const Pass = () => {
           *장소 추후 안내 예정
         </TextDiv>
         <LetterImg src="../images/envelope.png" />
-      </WhiteDiv>
-    </Container>
+      </WhiteBox>
+    </Background>
   );
 };
 

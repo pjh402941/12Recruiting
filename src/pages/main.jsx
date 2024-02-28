@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from './data.json';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './main.css';
 
 const Background = styled.div`
@@ -218,6 +218,7 @@ const Main = () => {
       discriminate();
     }
   };
+  
   return (
     <Background>
       <Line1>
