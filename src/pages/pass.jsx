@@ -127,8 +127,8 @@ const Pass = () => {
       // confettiRadius: 4,
       // confettiNumber: 400,
 
-      emojis: ['🦁', '🤍'],
-      emojiSize: 40,
+      emojis: ['✨'],
+      emojiSize: 65,
       confettiNumber: 55,
     });
   };
