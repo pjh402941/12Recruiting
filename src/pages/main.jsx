@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from './data.json';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './main.css';
 
 const Background = styled.div`
@@ -29,7 +29,7 @@ const WhiteBox = styled.div`
   width: 75%;
   height: 498px;
   top: 130px;
-  background: #ffffff;
+  background: #ffffff;z
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.59);
   border-radius: 5px;
   margin: auto;
@@ -140,20 +140,26 @@ const BtnLetter = styled.div`
 `;
 
 const Footer = styled.div`
-  position: relative;
-  height: 29px;
-  top: 230px;
-  margin: auto;
+  position: absolute;
+  width: 100%;
+  bottom: -15vh;
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
-  line-height: 29px;
   text-align: center;
   color: #ffffff;
-  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
-
+const BackgroundFooter = styled.div`
+position: fixed;
+bottom: 0;
+background: #902443;
+width:80.8%;
+height: 10px;
+z-index : -1;
+`;
 const Div = styled.div`
   text-align: center;
   margin: auto;
@@ -214,6 +220,12 @@ const Main = () => {
     }
   };
 
+  const handleOnKeyPress = e => {
+    if (e.key == 'Enter') {
+      discriminate();
+    }
+  };
+  
   return (
     <Background>
       <Line1>
@@ -249,6 +261,7 @@ const Main = () => {
               placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
+              onKeyPress={handleOnKeyPress} // Enter 입력 이벤트 함수
             ></PhoneBox>
           </Container>
           <Button onClick={discriminate}>
@@ -257,6 +270,9 @@ const Main = () => {
         </Div>
         <Footer>LIKELION UNIV . DWU</Footer>
       </WhiteBox>
+      <Line2>
+        <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
+      </Line2>
 
     </Background>
   );
