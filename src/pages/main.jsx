@@ -141,7 +141,7 @@ const BtnLetter = styled.div`
 
 const Footer = styled.div`
   position: relative;
-  height: 29px;
+  height: 50px;
   top: 230px;
   margin: auto;
   font-family: 'SUIT';
@@ -166,7 +166,6 @@ const Container = styled.div`
 
 const Main = () => {
   const navigate = useNavigate();
-
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
