@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from './data.json';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './main.css';
 
 const Background = styled.div`
@@ -142,7 +142,7 @@ const BtnLetter = styled.div`
 const Footer = styled.div`
   position: absolute;
   width: 100%;
-  bottom: -11vh;
+  bottom: -15vh;
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
@@ -218,6 +218,7 @@ const Main = () => {
       discriminate();
     }
   };
+  
   return (
     <Background>
       <Line1>
