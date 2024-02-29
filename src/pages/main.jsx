@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import $ from 'jquery';
 import data from './data.json';
 import { useNavigate } from 'react-router-dom';
 import './main.css';
@@ -28,8 +29,8 @@ const WhiteBox = styled.div`
   position: relative;
   width: 75%;
   height: 498px;
-  top: 130px;
-  background: #ffffff;
+  top: 70px;
+  background: #ffffff;z
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.59);
   border-radius: 5px;
   margin: auto;
@@ -140,20 +141,26 @@ const BtnLetter = styled.div`
 `;
 
 const Footer = styled.div`
-  position: relative;
-  height: 29px;
-  top: 230px;
-  margin: auto;
+  position: absolute;
+  width: 100%;
+  bottom: -13vh;
   font-family: 'SUIT';
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
-  line-height: 29px;
   text-align: center;
   color: #ffffff;
-  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
-
+const BackgroundFooter = styled.div`
+  position: fixed;
+  bottom: 0;
+  background: #902443;
+  width: 1280px;
+  height: 10px;
+  z-index: -1;
+`;
 const Div = styled.div`
   text-align: center;
   margin: auto;
@@ -166,7 +173,6 @@ const Container = styled.div`
 
 const Main = () => {
   const navigate = useNavigate();
-
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
@@ -184,37 +190,44 @@ const Main = () => {
     // 휴대폰번호 정규식 확인 추가
     if (!/^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/.test(pw)) {
       alert('올바른 전화번호 형식이 아닙니다. 다시 입력해주세요.');
-    }
-    for (let i = 0; i < 46; i++) {
-      if (
-        data[i] &&
-        id == data[i].name &&
-        pw == data[i].phone &&
-        data[i].pass == 1
-      ) {
-        console.log(id, pw, i);
-        navigate('/pass', { state: data[i].name });
-        break;
-      } else if (
-        data[i] &&
-        id == data[i].name &&
-        pw == data[i].phone &&
-        data[i].pass == 0
-      ) {
-        console.log(id, pw, i);
-        navigate('/fail');
-        break;
-      } else if (i == 45) {
-        console.log(id, pw, i);
-        alert(
-          '등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!',
-        );
-        break;
+    } else {
+      for (let i = 0; i < 46; i++) {
+        if (
+          data[i] &&
+          id == data[i].name &&
+          pw == data[i].phone &&
+          data[i].pass == 1
+        ) {
+          console.log(id, pw, i);
+          navigate('/pass', { state: data[i].name });
+          break;
+        } else if (
+          data[i] &&
+          id == data[i].name &&
+          pw == data[i].phone &&
+          data[i].pass == 0
+        ) {
+          console.log(id, pw, i);
+          navigate('/fail');
+          break;
+        } else if (i == 45) {
+          console.log(id, pw, i);
+          alert(
+            '등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!',
+          );
+          break;
+        }
       }
     }
   };
 
-  const handleOnKeyPress = e => {
+  const NextFocus = e => {
+    if (e.key == 'Enter') {
+      $(e.target).next('input').focus();
+    }
+  };
+
+  const CheckEnter = e => {
     if (e.key == 'Enter') {
       discriminate();
     }
@@ -246,6 +259,7 @@ const Main = () => {
               placeholder="김멋사"
               className="nameBox"
               onChange={handleInput}
+              onKeyDown={NextFocus}
             ></NameBox>
             <PhoneRec>
               <Rec />
@@ -255,7 +269,7 @@ const Main = () => {
               placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
-              onKeyPress={handleOnKeyPress} // Enter 입력 이벤트 함수
+              onKeyDown={CheckEnter} // Enter 입력 이벤트 함수
             ></PhoneBox>
           </Container>
           <Button onClick={discriminate}>
@@ -267,6 +281,7 @@ const Main = () => {
       <Line2>
         <img src={`${process.env.PUBLIC_URL}/images/main_bottom.png`} />
       </Line2>
+      <BackgroundFooter></BackgroundFooter>
     </Background>
   );
 };
