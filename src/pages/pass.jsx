@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 
 const Background = styled.div`
+position: relative;
   background: #902443;
   height: 100vh;
 `;
@@ -12,11 +13,12 @@ const WhiteBox = styled.div`
   position: relative;
   width: 320px;
   height: 600px;
-  top: 12vh;
+  top: 10vh;
   margin: 0 auto;
   background: #ffffff;
   filter: drop-shadow(0px 0px 10px #fff);
   border-radius: 5px;
+  z-index : 1;
 `;
 
 const Logo = styled.img`
@@ -56,7 +58,7 @@ const PassNameDiv = styled.div`
   font-family: 'Pretendard';
   font-weight: 500;
   font-size: 20px;
-  line-height: 29px;
+  line-height: 10px;
   color: #000000;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -66,14 +68,14 @@ const PassNameDiv = styled.div`
 const PassName = styled.div`
   font-weight: 700;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 10px;
   color: #0075ff;
 `;
 
 const PassNameSub = styled.div`
   font-weight: 700;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 10px;
   color: #000000;
 `;
 
@@ -85,17 +87,30 @@ const TextDiv = styled.div`
   letter-spacing: 0.01em;
   text-align: center;
   padding-top: 0.8rem;
-  line-height: 1.4rem;
+  line-height: 1.2rem;
+`;
+
+
+const LetterImgWrapper = styled.div`
+  position: absolute;
+  background: #902443;
+  width: 100%; /* 배경의 너비를 100%로 설정 */
+  height: 10%; /* 배경의 높이를 원하는 크기로 설정 */
+  bottom: -8%;
+  left: 0;
+  z-index: 2; /* 다른 요소 위에 나타나도록 설정 */
 `;
 
 const LetterImg = styled.img`
+filter: drop-shadow(0px 0px 7px #fff);
+  border-radius: 5px;
   width: 380px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
-  bottom: -25%;
+  transform: translateX(-50%);
+  bottom: 32%;
+  z-index: -1; /* 다른 요소보다 위에 나타나도록 설정 */
 `;
-
 const Back = styled.div`
   position: absolute;
   top: 15px;
@@ -178,7 +193,10 @@ const Pass = () => {
           </TextWrapper>
         </Container>
       </WhiteBox>
+
+      <LetterImgWrapper>
       <LetterImg src="../images/envelope.png" />
+      </LetterImgWrapper>
     </Background>
   );
 };
