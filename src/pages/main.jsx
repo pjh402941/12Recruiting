@@ -222,8 +222,13 @@ const Main = () => {
   };
 
   const NextFocus = e => {
-    if (e.key == 'Enter') {
-      $(e.target).next('input').focus();
+    if (e.key === 'Enter') {
+      const inputs = $('input'); //모든 input
+      const currentIndex = inputs.index(e.target); //현재 input
+
+      if (currentIndex !== -1) { //input이 유효할 때
+        inputs.eq(currentIndex + 1).focus(); //다음 input으로 focus 넘깁니다
+      }
     }
   };
 
