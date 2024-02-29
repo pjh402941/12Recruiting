@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import $ from 'jquery';
 import data from './data.json';
 import { useNavigate } from 'react-router-dom';
 import './main.css';
@@ -189,37 +190,49 @@ const Main = () => {
     // 휴대폰번호 정규식 확인 추가
     if (!/^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/.test(pw)) {
       alert('올바른 전화번호 형식이 아닙니다. 다시 입력해주세요.');
-    }
-    for (let i = 0; i < 46; i++) {
-      if (
-        data[i] &&
-        id == data[i].name &&
-        pw == data[i].phone &&
-        data[i].pass == 1
-      ) {
-        console.log(id, pw, i);
-        navigate('/pass', { state: data[i].name });
-        break;
-      } else if (
-        data[i] &&
-        id == data[i].name &&
-        pw == data[i].phone &&
-        data[i].pass == 0
-      ) {
-        console.log(id, pw, i);
-        navigate('/fail');
-        break;
-      } else if (i == 45) {
-        console.log(id, pw, i);
-        alert(
-          '등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!',
-        );
-        break;
+    } else {
+      for (let i = 0; i < 46; i++) {
+        if (
+          data[i] &&
+          id == data[i].name &&
+          pw == data[i].phone &&
+          data[i].pass == 1
+        ) {
+          console.log(id, pw, i);
+          navigate('/pass', { state: data[i].name });
+          break;
+        } else if (
+          data[i] &&
+          id == data[i].name &&
+          pw == data[i].phone &&
+          data[i].pass == 0
+        ) {
+          console.log(id, pw, i);
+          navigate('/fail');
+          break;
+        } else if (i == 45) {
+          console.log(id, pw, i);
+          alert(
+            '등록되지 않은 성함/번호입니다. \n성함과 번호를 다시 한 번 확인해주세요!',
+          );
+          break;
+        }
       }
     }
   };
 
-  const handleOnKeyPress = e => {
+  const NextFocus = e => {
+    if (e.key === 'Enter') {
+      const inputs = $('input'); //모든 input
+      const currentIndex = inputs.index(e.target); //현재 input
+
+      if (currentIndex !== -1) { //input이 유효할 때
+        inputs.eq(currentIndex + 1).focus(); //다음 input으로 focus 넘깁니다
+      }
+    }
+  };
+
+  const CheckEnter = e => {
     if (e.key == 'Enter') {
       discriminate();
     }
@@ -251,6 +264,7 @@ const Main = () => {
               placeholder="김멋사"
               className="nameBox"
               onChange={handleInput}
+              onKeyDown={NextFocus}
             ></NameBox>
             <PhoneRec>
               <Rec />
@@ -260,7 +274,7 @@ const Main = () => {
               placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
-              onKeyPress={handleOnKeyPress} // Enter 입력 이벤트 함수
+              onKeyDown={CheckEnter} // Enter 입력 이벤트 함수
             ></PhoneBox>
           </Container>
           <Button onClick={discriminate}>
