@@ -116,26 +116,28 @@ const Pass = () => {
 
   const confetti = () => {
     jsConfetti.addConfetti({
-      confettiColors: [
-        '#ff0a54',
-        '#fde047',
-        '#a3e635',
-        '#38bdf8',
-        '#c4b5fd',
-        '#f9bec7',
-      ],
-      confettiRadius: 4,
-      confettiNumber: 400,
+      // confettiColors: [
+      //   '#ff0a54',
+      //   '#fde047',
+      //   '#a3e635',
+      //   '#38bdf8',
+      //   '#c4b5fd',
+      //   '#f9bec7',
+      // ],
+      // confettiRadius: 4,
+      // confettiNumber: 400,
+
+      emojis: ['🦁', '🤍'],
+      emojiSize: 40,
+      confettiNumber: 55,
     });
   };
 
   confetti();
   var timer = setInterval(confetti, 3000);
   setTimeout(stopConfetti, 9000);
-
   window.addEventListener('popstate', stopConfetti);
   window.addEventListener('beforeunload', stopConfetti);
-
   function stopConfetti() {
     clearInterval(timer);
   }

@@ -67,7 +67,7 @@ const PhoneRec = styled.div`
   position: relative;
   width: 36px;
   height: 26px;
-  top: 70px;
+  top: 120px;
 `;
 const Rec = styled.div`
   position: relative;
