@@ -159,7 +159,7 @@ const Pass = () => {
   return (
     <Background>
       <Back onClick={gotoHome}>
-        <img src={`${process.env.PUBLIC_URL}/images/left.svg`} width="50px" />
+        <img src={`${process.env.PUBLIC_URL}/images/left.svg`} width="40px" />
       </Back>
       <WhiteBox>
         <Logo src="../images/ddwu_logo.png" />
