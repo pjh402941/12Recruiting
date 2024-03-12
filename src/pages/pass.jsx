@@ -6,7 +6,7 @@ import JSConfetti from 'js-confetti';
 const Background = styled.div`
 position: relative;
   background: #902443;
-  height: 100vh;
+  height: 150vh;
 `;
 
 const WhiteBox = styled.div`
@@ -94,22 +94,22 @@ const TextDiv = styled.div`
 const LetterImgWrapper = styled.div`
   position: absolute;
   background: #902443;
-  width: 100%; /* 배경의 너비를 100%로 설정 */
-  height: 10%; /* 배경의 높이를 원하는 크기로 설정 */
-  bottom: -8%;
+  width: 100%;
+  height: 10%;
+  bottom: px; 
   left: 0;
-  z-index: 2; /* 다른 요소 위에 나타나도록 설정 */
+  z-index: 1;
 `;
 
 const LetterImg = styled.img`
-filter: drop-shadow(0px 0px 7px #fff);
+  filter: drop-shadow(0px 0px 7px #fff);
   border-radius: 5px;
   width: 380px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 32%;
-  z-index: -1; /* 다른 요소보다 위에 나타나도록 설정 */
+  z-index: 1;
+  bottom : 20px;
 `;
 const Back = styled.div`
   position: absolute;
@@ -185,18 +185,30 @@ const Pass = () => {
               </a>
               <br />
               <br />
-              3월 15일까지 디스코드에 들어와주세요!
+              3월 15일(금) 오후 15:00 까지
               <br />
-              <br /> 3/17(일) 동덕 멋사 OT에서 만나요~ <br />
+            디스코드에 들어와주세요!
+            <br />
+            <br />
+               3/17(일) 동덕 멋사 OT에서 만나요~ <br />
               *장소 추후 안내 예정
+              <br />
+              <br />
+              멋쟁이사자처럼 12기 미등록 예정자의 경우 
+              <br/>
+              1차 합격 안내 받은 연락처로 
+              <br/>
+              개별 연락 부탁드립니다.
+              <br />
+      
             </TextDiv>
           </TextWrapper>
         </Container>
       </WhiteBox>
 
-      <LetterImgWrapper>
+
       <LetterImg src="../images/envelope.png" />
-      </LetterImgWrapper>
+
     </Background>
   );
 };
