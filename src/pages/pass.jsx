@@ -4,9 +4,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 
 const Background = styled.div`
-position: relative;
+  position: relative;
   background: #902443;
-  height: 150vh;
+  height: 100vh;
+  overflow: scroll;
 `;
 
 const WhiteBox = styled.div`
@@ -18,7 +19,7 @@ const WhiteBox = styled.div`
   background: #ffffff;
   filter: drop-shadow(0px 0px 10px #fff);
   border-radius: 5px;
-  z-index : 1;
+  z-index: 1;
 `;
 
 const Logo = styled.img`
@@ -90,17 +91,6 @@ const TextDiv = styled.div`
   line-height: 1.2rem;
 `;
 
-
-const LetterImgWrapper = styled.div`
-  position: absolute;
-  background: #902443;
-  width: 100%;
-  height: 10%;
-  bottom: px; 
-  left: 0;
-  z-index: 1;
-`;
-
 const LetterImg = styled.img`
   filter: drop-shadow(0px 0px 7px #fff);
   border-radius: 5px;
@@ -108,8 +98,8 @@ const LetterImg = styled.img`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
-  bottom : 20px;
+  bottom: -130px;
+  z-index: -1; /* 다른 요소보다 위에 나타나도록 설정 */
 `;
 const Back = styled.div`
   position: absolute;
@@ -159,7 +149,7 @@ const Pass = () => {
   return (
     <Background>
       <Back onClick={gotoHome}>
-        <img src={`${process.env.PUBLIC_URL}/images/left.svg`} width="50px" />
+        <img src={`${process.env.PUBLIC_URL}/images/left.svg`} width="40px" />
       </Back>
       <WhiteBox>
         <Logo src="../images/ddwu_logo.png" />
@@ -187,28 +177,24 @@ const Pass = () => {
               <br />
               3월 15일(금) 오후 15:00 까지
               <br />
-            디스코드에 들어와주세요!
-            <br />
-            <br />
-               3/17(일) 동덕 멋사 OT에서 만나요~ <br />
+              디스코드에 들어와주세요!
+              <br />
+              <br />
+              3/17(일) 동덕 멋사 OT에서 만나요~ <br />
               *장소 추후 안내 예정
               <br />
               <br />
-              멋쟁이사자처럼 12기 미등록 예정자의 경우 
-              <br/>
-              1차 합격 안내 받은 연락처로 
-              <br/>
+              멋쟁이사자처럼 12기 미등록 예정자의 경우
+              <br />
+              1차 합격 안내 받은 연락처로
+              <br />
               개별 연락 부탁드립니다.
               <br />
-      
             </TextDiv>
           </TextWrapper>
         </Container>
+        <LetterImg src="../images/envelope.png" />
       </WhiteBox>
-
-
-      <LetterImg src="../images/envelope.png" />
-
     </Background>
   );
 };
