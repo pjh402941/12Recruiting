@@ -27,7 +27,7 @@ const Logo = styled.img`
   width: 58px;
   height: 58px;
   left: 50%;
-  top: 10vh;
+  top: 9vh;
   transform: translate(-50%, -50%);
 `;
 
@@ -89,6 +89,9 @@ const TextDiv = styled.div`
   text-align: center;
   padding-top: 0.8rem;
   line-height: 1.2rem;
+  #caution {
+    color: gray;
+  }
 `;
 
 const LetterImg = styled.img`
@@ -184,11 +187,11 @@ const Pass = () => {
               *장소 추후 안내 예정
               <br />
               <br />
-              멋쟁이사자처럼 12기 미등록 예정자의 경우
-              <br />
-              1차 합격 안내 받은 연락처로
-              <br />
-              개별 연락 부탁드립니다.
+              <div id="caution">
+                미등록 예정자는 1차 합격 안내 연락처로
+                <br />
+                개별 연락 부탁드립니다.
+              </div>
               <br />
             </TextDiv>
           </TextWrapper>
