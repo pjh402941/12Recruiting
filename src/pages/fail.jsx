@@ -44,6 +44,10 @@ const TextBox = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  #bold {
+    font-weight: bold;
+  }
 `;
 const Back = styled.div`
   position: absolute;
@@ -56,6 +60,7 @@ const fail = () => {
   const gotoHome = () => {
     navigate(-1);
   };
+
   return (
     <Background>
       <Back onClick={gotoHome}>
@@ -100,9 +105,11 @@ const fail = () => {
             함께 할 수 있기를 진심으로 바라겠습니다.
             <br />
             <br />
-            추가 합격자의 경우 "3월 15일 금요일" 까지
-            <br />
-            연락 드리겠습니다.
+            <div id="bold">
+              추가 합격자의 경우 "3월 15일 금요일" 까지
+              <br />
+              연락 드리겠습니다.
+            </div>
             <br />
             <br />
             감사합니다.
