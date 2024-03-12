@@ -170,8 +170,8 @@ const Pass = () => {
               <br /> 자세한 사항은 discord를 통해 안내드리겠습니다.
               <br />
               <br />
-              <a href="https://discord.gg/BSHH7mck" target={'_blank'}>
-                https://discord.gg/BSHH7mck
+              <a href="https://discord.gg/XvjvEJsU" target={'_blank'}>
+                https://discord.gg/XvjvEJsU
               </a>
               <br />
               <br />
