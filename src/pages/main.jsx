@@ -181,8 +181,15 @@ const Main = () => {
     //console.log("id", id);
   }
 
+  // 자동 하이픈 생성
   function handlePwInput(event) {
-    setPw(event.target.value);
+    let phoneNumber = event.target.value.replace(/\D+/g, '');
+    if (phoneNumber.length > 3 && phoneNumber.length <= 7) {
+      phoneNumber = phoneNumber.replace(/(\d{3})(\d{1,4})/, '$1-$2'); // 010-까지
+    } else if (phoneNumber.length > 7) {
+      phoneNumber = phoneNumber.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3'); // 010-0000-까지
+    }
+    setPw(phoneNumber);
     //console.log("pw", pw);
   }
 
@@ -226,7 +233,8 @@ const Main = () => {
       const inputs = $('input'); //모든 input
       const currentIndex = inputs.index(e.target); //현재 input
 
-      if (currentIndex !== -1) { //input이 유효할 때
+      if (currentIndex !== -1) {
+        //input이 유효할 때
         inputs.eq(currentIndex + 1).focus(); //다음 input으로 focus 넘깁니다
       }
     }
@@ -274,6 +282,7 @@ const Main = () => {
               placeholder="010-0000-0000"
               className="phoneBox"
               onChange={handlePwInput}
+              value={pw}
               onKeyDown={CheckEnter} // Enter 입력 이벤트 함수
             ></PhoneBox>
           </Container>
