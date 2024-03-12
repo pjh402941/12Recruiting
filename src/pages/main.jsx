@@ -190,6 +190,7 @@ const Main = () => {
       phoneNumber = phoneNumber.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3'); // 010-0000-까지
     }
     setPw(phoneNumber);
+    //setPw(event.target.value);
     //console.log("pw", pw);
   }
 
