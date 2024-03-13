@@ -44,6 +44,10 @@ const TextBox = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  #bold {
+    font-weight: bold;
+  }
 `;
 const Back = styled.div`
   position: absolute;
@@ -56,6 +60,7 @@ const fail = () => {
   const gotoHome = () => {
     navigate(-1);
   };
+
   return (
     <Background>
       <Back onClick={gotoHome}>
@@ -78,7 +83,7 @@ const fail = () => {
             <br />
             우선 동덕여대 멋쟁이사자처럼 12기
             <br />
-            아기자사 모집에 관심을 가지고
+            아기사자 모집에 관심을 가지고
             <br />
             지원해 주신 점, 매우 감사드립니다.
             <br />
@@ -100,9 +105,11 @@ const fail = () => {
             함께 할 수 있기를 진심으로 바라겠습니다.
             <br />
             <br />
-            추가 합격자의 경우 "3월 15일 금요일" 까지
-            <br />
-            연락 드리겠습니다.
+            <div id="bold">
+              추가 합격자의 경우 "3월 15일 금요일" 까지
+              <br />
+              연락 드리겠습니다.
+            </div>
             <br />
             <br />
             감사합니다.
