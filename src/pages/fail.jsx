@@ -16,7 +16,7 @@ const WhiteBox = styled.div`
   margin: auto;
   background: #ffffff;
   box-shadow: 0px 0px 4px 2px rgba(100, 100, 100, 0.25);
-  border-radius: 5px;
+  border-radius: 4px;
 `;
 
 const ContentBox = styled.div`
